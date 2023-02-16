@@ -1,0 +1,56 @@
+-- vim.cmd [[autocmd BufWritePost init.lua source init.lua]]
+
+local include = {
+	"plugins",
+	"lspconfig",
+	"nvim-lsp-installer",
+	"mason",
+	"cmp",
+	"keymaps",
+	"options",
+	"lualine",
+	"shade",
+	"nvim-tree",
+	"telescope",
+	"mini",
+	"whichkey",
+	"treesitter",
+	"vim-illuminate",
+	"colorizer",
+	"toggleterm",
+	"autopairs",
+	"lspsaga",
+	"tabline",
+	"navic",
+	"luasnip",
+	"luatab",
+	"indent-blankline",
+	"catppuccin"
+}
+
+for _, plugins in ipairs(include) do
+	require("user" .. "." .. plugins)
+end
+
+vim.opt.shortmess:append "c"
+vim.wo.fillchars = 'eob: '
+-- vim.cmd[[augroup user_colors
+--   autocmd!
+--   autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+-- augroup END]]
+vim.cmd [[colorscheme catppuccin]]
+-- vim.cmd [[colorscheme dogrun]]
+-- vim.cmd [[colorscheme oxocarbon]]
+vim.cmd [[set laststatus=3]]
+vim.g.markdown_fenced_languages = {
+	"ts=typescript"
+}
+-- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
+-- vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
+-- vim.cmd [[hi LineNr guibg=none ctermbg=none]]
+-- vim.cmd [[hi Folded guibg=none ctermbg=none]]
+-- vim.cmd [[hi NonText guibg=none ctermbg=none]]
+-- vim.cmd [[hi SpecialKey guibg=none ctermbg=none]]
+-- vim.cmd [[hi VertSplit guibg=none ctermbg=none]]
+-- vim.cmd [[hi SignColumn guibg=none ctermbg=none]]
+-- vim.cmd [[hi EndOfBuffer guibg=none ctermbg=none]]
